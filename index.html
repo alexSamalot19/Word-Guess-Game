@@ -1,64 +1,69 @@
 <!doctype html>
-<html>
-    <head>
-        <title>Hangman | Classic Western</title>
+<html lang="en-us">
 
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+    <meta charset="UTF-8">
+    <title>The Psychic Game</title>
 
-        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-        <link href="css/main.css" rel="stylesheet" type="text/css"/>
-    </head>
-    <body>
-        <div class="container">
-            <div class="page-header">
-                <h1>Hangman | <strong>Classic Western</strong></h1>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+    <script type="text/javascript" src="assets/javascript/game.js"></script>
+
+</head>
+
+
+<body>
+
+    <div class="container">
+
+        <h1>The Psychic Game</h1>
+
+
+        <h3>Guess What Letter I am Thinking of</h3>
+
+        <div class="row">
+            <div id="GuesesLeft" class="col-md-4 text-center">
+                <h4>Guesses Left:</h4>
             </div>
 
-            <div class="col-md-2">
-                <div id="hangman_img" class="image0"></div>
+            <div id="livesLeft" class="col-md-4 text-center">5</div>
+
+            <div id="GuesedSoFar" class="col-md-4 text-center" onkeypress="checkKey (event)">
+                <h4>You Have Guessed So Far:</h4>
             </div>
 
-            <div id="word" class="col-md-4 text-center">
-                <h4>Your word is:</h4>
-                <p><strong id="targetWord"></strong></p>
+            <div id = "guessList" class="col-md-4 text-center">
+
             </div>
 
-            <div id="guesses" class="col-md-4 text-center">
-                <h4>You have guessed</h4>
-                <p><strong id="previousGuesses"><em>nothing yet... guess a letter</em></strong></p>
-            </div>
-
-            <div class="row">
-                <div id="guessInput" class="col-md-8 text-center">
-                    <br/>
-                    <br/>
-                    
-                    <input type="text" maxlength="1" id="guess" placeholder="Type a letter" />
-                    <br/>
-
-                    <br/>
-                    <h2><strong>Press Any Key To Get Started</strong></h2>
-
-                </div>
-            </div>
         </div>
-        <script src="js/jquery.min.js" type="text/javascript"></script>
-        <script src="hangman2.js" type="text/javascript"></script>
-        <div class="modal fade" id="endGameDialog" tabindex="-1" role="dialog" aria-labelledby="endGameDialog" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4><a onclick="resetGame();" class="close" data-dismiss="modal" aria-hidden="true">&times;</a></h4>
-                        <h4 id="endGameDialogTitle"></h4>
-                    </div>
-                    <div class="modal-body" id="endGameDialogContent"></div>
-                    <div class="modal-footer">
-                        <h4><a onclick="resetGame();" class="btn btn-primary" data-dismiss="modal">Reset</a></h4>
-                    </div>
+
+        <div class="row">
+                <div id="Wins" class="col-md-4 text-center">
+                    <h4>Wins:</h4>
                 </div>
+                <div id="winList" class="col-md-4 text-center">0</div>
+    
+                <div id="Losses" class="col-md-4 text-center">
+                    <h4>Losses:</h4>
+                </div>
+
+                <div id="lossList" class="col-md-4 text-center">0</div>
+    
             </div>
+
+
+
+
         </div>
-        <script src="js/bootstrap.min.js" type="text/javascript"></script>
-    </body>
+
+
+    </div>
+
+
+
+</body>
+
+
+
 </html>

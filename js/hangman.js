@@ -18,7 +18,7 @@ function setImage(number) {
 function loadWordlist() {
     var word = '';
 
-    wordlist = ['one', 'two', 'three'];
+    wordlist = ['cowboy', 'western', 'horse'];
 
 
 }
@@ -57,12 +57,23 @@ function drawGuesses() {
 
 function cleanGuess() {
     var uniqueGuesses = [];
+    
+
     $.each(guesses, function(index, element) {
         if (element.length > 0 && $.inArray(element, uniqueGuesses) == -1) {
             uniqueGuesses.push(element);
         }
     });
     guesses = uniqueGuesses;
+
+
+    document.onkeydown = function(event) {
+    var userIn = '';
+
+    userIn = String.fromCharCode(event.keycode)
+
+    console.log("user input = " + userIn);
+}
 }
 
 function addGuess() {

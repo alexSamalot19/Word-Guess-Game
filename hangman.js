@@ -25,7 +25,7 @@ function obfuscateWord() {
 
     for (var i = 0; i < targetWord.length; i++) {
         if (guesses.indexOf(targetWord[i].toLowerCase(), 0) == -1) {
-            obWord += '_';
+            obWord += ' _ ';
         } else {
             obWord += targetWord[i];
         }
@@ -47,6 +47,12 @@ function drawGuesses() {
 
 function cleanGuess() {
     var uniqueGuesses = [];
+    // var userIn = [];
+
+    console.log(event.keycode);
+
+    // console.log("user input = " + userIn)
+
     $.each(guesses, function(index, element) {
         if (element.length > 0 && $.inArray(element, uniqueGuesses) == -1) {
             uniqueGuesses.push(element);
